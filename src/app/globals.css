@@ -5,14 +5,14 @@
 :root {
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+  --background-end-rgb: 214, 219, 220;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
+    --foreground-rgb: 0, 0, 0;
+    --background-start-rgb: 255, 255, 255;
+    --background-end-rgb: 255, 255, 255;
   }
 }
 
@@ -29,5 +29,30 @@ body {
 @layer utilities {
   .text-balance {
     text-wrap: balance;
+  }
+}
+
+#brown-circle:hover {
+  animation-name: brown-circle-animation;
+  animation-duration: 500ms;
+  animation-fill-mode: forwards;
+  animation-timing-function: linear;
+  animation-direction: normal;
+  animation-iteration-count: 1;
+}
+
+@keyframes brown-circle-animation { 
+  0% {
+    width: 0.9px;height: 1.2px;
+    transform: translate(12.5px,7.5px) scale(11.3,8.7) translate(-0.4px,-0.6px);
+    rx: 3;ry: 3px;
+  } 
+  40% {
+    rx: 0.75px;ry: 0.75px;
+  } 
+  100% {
+    width: 2.2px;height: 1.7px;
+    transform: translate(12.5px,7.5px) scale(11.3,8.7) translate(-1.1px,-0.9px);
+    rx: 0.25px;ry: 0.25px;
   }
 }
