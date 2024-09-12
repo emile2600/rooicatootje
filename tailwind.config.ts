@@ -7,20 +7,23 @@ const config: Config = {
     "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
-    colors: {
-      transparent: 'transparent',
-      grey: '#E5E4E2',
-      white: '#f0ead6', // alternate #dcded5
-      clear_white: '#ffffff',
-      brown: '#43302a',
-      orange: '#c45924',
-      green: '#32523a'
-    },
     extend: {
+      colors: {
+        transparent: 'transparent',
+        grey:  '#DFCAA0', // '#A9A9A9',
+        white: '#dcded5', // alternate #dcded5
+        clear_white: '#ffffff',
+        brown: '#3d240c',
+        green: '#708090', // '#588157',
+        blue: '#83c5be', // `#669BBC`,
+      },
       backgroundImage: {
-        "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
-        "gradient-conic":
-          "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
+        'concrete-wall': "url('https://www.transparenttextures.com/patterns/concrete-wall-3.png');", /* This is mostly intended for prototyping; please download the pattern and re-host for production environments. Thank you! */
+        'tiles': "url('https://www.transparenttextures.com/patterns/batthern.png');", /* This is mostly intended for prototyping; please download the pattern and re-host for production environments. Thank you! */
+        'axiom': "url('https://www.transparenttextures.com/patterns/axiom-pattern.png');",
+      },
+      fontFamily: {
+        'logo': ['Engravers MT']
       },
     },
   },

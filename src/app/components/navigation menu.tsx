@@ -12,7 +12,7 @@ function NavigationMenu(): ReactElement {
         <div className={whiteDividerClass}/>
         <div className="px-2 bg-white">
         <div className={innerShadowWhiteDividerClass}/>
-          <div className="bg-white w-full flex justify-around min-h-12 ">
+          <div className="bg-white w-full flex justify-around min-h-12">
             <Circles className="justify-self-center pt-2 pb-4 fill-brown hover:fill-clear_white max-h-20"/>
           </div>
           <div className={whiteDividerClass}/>

@@ -2,6 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
+
 :root {
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;
@@ -34,7 +35,7 @@ body {
 
 #brown-circle:hover {
   animation-name: brown-circle-animation;
-  animation-duration: 500ms;
+  animation-duration: 200ms;
   animation-fill-mode: forwards;
   animation-timing-function: linear;
   animation-direction: normal;
@@ -54,5 +55,64 @@ body {
     width: 2.2px;height: 1.7px;
     transform: translate(12.5px,7.5px) scale(11.3,8.7) translate(-1.1px,-0.9px);
     rx: 0.25px;ry: 0.25px;
+  }
+}
+
+#sign-row {
+
+}
+
+#sign-row:has(.company-container:first-of-type:hover) {
+  animation: expand-left;
+  animation-duration: 0.5s;
+  animation-fill-mode: both;
+}
+
+@keyframes expand-left{
+  0%{
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+  100%{
+    grid-template-columns: 1.5fr 0.5fr 0.5fr;
+  }
+}
+
+#sign-row:has(.company-container:hover) {
+  animation-name: expand-center;
+  animation-duration: 0.5s;
+  animation-fill-mode: both;
+}
+
+@keyframes expand-center{
+  0% {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+  80%{
+    grid-template-columns: 0.5fr 1.5fr 0.5fr;
+  }
+  100% {
+    grid-template-columns: 0.5fr 1.5fr 0.5fr;
+  }
+}
+
+#sign-row:has(.company-container:last-of-type:hover) {
+  animation: expand-right;
+  animation-duration: 0.5s;
+  animation-fill-mode: both;
+}
+
+@keyframes expand-right{
+  0%{
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+  100%{
+    grid-template-columns: 0.5fr 0.5fr 1.5fr;
+  }
+}
+
+@layer base{
+  @font-face {
+    font-family: 'Engravers MT';
+    src: url('../assets/fonts/logo/engravers-mt.ttf') format('truetype');
   }
 }
