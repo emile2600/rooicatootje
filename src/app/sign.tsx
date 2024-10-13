@@ -9,8 +9,9 @@ import prada_logo from "../assets/png/logos/prada_logo.png";
 
 
 export default function Sign(): ReactElement {
-    const whiteDividerClass: string = "bg-clear_white min-h-3 h-auto w-full";
-    const signRowClass: string = "grid gap-32 gap-y-24 grid-cols-3 p-16 pb-0 justify-items-center";
+    const whiteDividerClass: string = "bg-clear-white min-h-3 h-auto w-full";
+
+
     return(<main className="bg-white flex-col min-h-screen shadow-inner bg-concrete-wall">
         <div id="Title" className="flex-col">
             <div className={`${whiteDividerClass} shadow-md`}/>
@@ -21,68 +22,133 @@ export default function Sign(): ReactElement {
             </div>
         </div>
 
-        <div id="sign" className="flex-col">
-            <div id="sign-row" className={`${signRowClass} `}>
-                <CompanyContainer 
-                    company="Sandy Cheeks"
-                    logo={<img className="object-contain" src={sandy_cheeks_logo.src} alt="Sandy Cheeks Logo"/>}
-                    text={"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."}
-                />
-                <CompanyContainer 
-                    company="MSL"
-                    logo={<img className="p-2 object-contain" src={msl_logo.src} alt="My Sustainable Life Logo"/>}
-                    text={"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. bla bla bla bla bla bla bla blabla bla bla blabla bla bla blabla bla bla blabla bla bla blabla bla bla blabla bla bla blabla bla bla blabla bla bla blabla bla bla blabla bla bla bla bla blabla bla bla blabla bla bla blabla bla bla blabla bla bla blabla bla bla blabla bla bla blabla bla bla blabla bla bla blabla bla bla blabla bla bla bla bla blabla bla bla blabla bla bla blabla bla bla blabla bla bla blabla bla bla blabla bla bla blabla bla bla blabla bla bla blabla bla bla blabla bla bla bla"}
-                />
-                <CompanyContainer
-                    company="L'Oréal"
-                    logo={<img className="object-contain px-2" src={loreal_logo.src} alt="L'Oréal Logo"/>}
-                    text={"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."}
-                />
-            </div>
-            <div id="sign-row" className={`${signRowClass} `}>
-                <CompanyContainer
-                    company="Rituals"
-                    logo={<img className="object-contain p-2" src={rituals_logo.src} alt="Rituals Logo"/>}
-                    text={"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."}
-                />
-                <CompanyContainer
-                    company="Prada"
-                    logo={<img className="object-contain p-2" src={prada_logo.src} alt="Prada Logo"/>}
-                    text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-                />
-                <CompanyContainer/>
-            </div>
-            
-            <div id="sign-row" className={`${signRowClass} `}>
-                <CompanyContainer/>
-                <CompanyContainer/>
-                <CompanyContainer/>
-            </div>
+        <div className={`flex-col`}>
+            <SignRow 
+                company1={new Company(
+                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.", 
+                    "Sandy Cheeks", 
+                    <img className="object-contain" src={sandy_cheeks_logo.src} alt="Sandy Cheeks Logo"/>
+                )}
+                company2={new Company(
+                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.", 
+                    "My Sustainable Life", 
+                    <img className="object-contain" src={msl_logo.src} alt="My Sustainable Life Logo"/>
+                )}
+                company3={new Company(
+                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.", 
+                    "L'Oréal", 
+                    <img className="object-contain" src={loreal_logo.src} alt="L'Oréal Logo"/>
+                )}/>
+            <SignRow
+                company1={new Company(
+                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.", 
+                    "Rituals", 
+                    <img className="object-contain" src={rituals_logo.src} alt="Rituals Logo"/>
+                )}
+                company2={new Company(
+                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.", 
+                    "Prada", 
+                    <img className="object-contain" src={prada_logo.src} alt="Prada Logo"/>
+                )}
+            />
+            <SignRow/>
         </div>
     </main>);
 }
 
-function CompanyContainer({logo, text, company}: {logo?: ReactElement, text?: string, company?: string}): ReactElement {
-    const [state, setState] = useState<ReactElement>(<Initial/>);
-    const height = 36;
+class Company {
+    logo: ReactElement;
+    text: string;
+    name: string;
 
-    logo ??= <Fragment/>
-    return (<>{state}</>);
-
-
-    function Initial(): ReactElement {
-        return (<div className={`company-container w-full h-${height} bg-clear_white flex justify-evenly`} onMouseEnter={() => {setState(<Expanded/>)}}>
-            {logo}
-        </div>);
+    constructor(text: string, name: string, logo?: ReactElement){
+        this.logo = logo ?? <Fragment/>;
+        this.text = text;
+        this.name = name;
     }
-    function Expanded(): ReactElement {
-        return (<div className={`company-container grid grid-cols-3 w-full max-h-${height} bg-clear_white justify-evenly`} onMouseLeave={() => {setState(<Initial/>)}}>
-            <div className={`flex col-span-1 h-${height}`}>
-                {logo}
+}
+
+function SignRow({company1, company2, company3}: {company1?: Company, company2?: Company, company3?: Company}): ReactElement {
+    const [gridColumns, setGridColumns] = useState("grid-cols-3");
+    const signRowClass: string = `grid gap-32 gap-y-24 ${gridColumns} p-16 pb-0 justify-items-center`;
+
+    return(<div className={`${signRowClass}`}>
+        <CompanyContainer company={company1} onMouseEnter={() => AnimationController(1)} onMouseLeave={() => AnimationController(1, true)}/>
+        <CompanyContainer company={company2} onMouseEnter={() => AnimationController(2)} onMouseLeave={() => AnimationController(2, true)}/>
+        <CompanyContainer company={company3} onMouseEnter={() => AnimationController(3)} onMouseLeave={() => AnimationController(3, true)}/>
+    </div>);
+    // colums get animation if the column is between 1-3
+    function AnimationController(column: number, reverse?: boolean) {
+        if(reverse) {
+            switch(column){
+                case 1:
+                    setGridColumns("animate-grid-cols-3-1-1-r");
+                    break;
+                case 2:
+                    setGridColumns("animate-grid-cols-1-3-1-r");
+                    break;
+                case 3:
+                    setGridColumns("animate-grid-cols-1-1-3-r");
+                    break;
+                default:
+                    setGridColumns("grid-cols-3");
+                    break;
+            }
+        }
+        else {
+            switch(column) {
+                case 1:
+                    setGridColumns("animate-grid-cols-3-1-1");
+                    break;
+                case 2:
+                    setGridColumns("animate-grid-cols-1-3-1");
+                    break;
+                case 3:
+                    setGridColumns("animate-grid-cols-1-1-3");
+                    break;
+                default:
+                    setGridColumns("grid-cols-3");
+                    break;
+            }
+        }
+        
+    }
+}
+
+
+function CompanyContainer({company, onMouseEnter, onMouseLeave} : {company?: Company, onMouseEnter: VoidFunction, onMouseLeave: VoidFunction}): ReactElement {
+    const [detailsAnimtaion, setDetailsAnimation] = useState<string>("grid-cols-[1fr_0fr]");
+    const containerStyle: string = `grid w-full h-36 bg-clear-white justify-evenly overflow-hidden`;
+
+    return company === undefined ? <EmptyCompanyContainer/> : <FilledCompanyContainer company={company}/>;
+
+    function AnimationController(hovering: boolean): void {
+        setDetailsAnimation(hovering ? "animate-grid-cols-1-2" : "animate-grid-cols-1-0");
+        setTimeout(() => {if(!hovering) setDetailsAnimation("grid-cols-[1fr_0fr]")}, 300);
+    }
+
+    function OnMouseEnter(): void {
+        onMouseEnter();
+        AnimationController(true);
+    }
+
+    function OnMouseLeave(): void {
+        onMouseLeave();
+        AnimationController(false);
+    }
+
+    function EmptyCompanyContainer() { 
+        return (<div className={`$${containerStyle} grid-cols-[1fr_0fr]`}/>);
+    };
+    
+    function FilledCompanyContainer({company} : {company: Company}) {
+        return (<div className={`${detailsAnimtaion} ${containerStyle}`} onMouseEnter={OnMouseEnter} onMouseLeave={OnMouseLeave}>
+            <div className={`company-logo place-self-center flex h-36`}>
+                {company.logo}
             </div>
-            <div className={`flex-col col-span-2 h-${height} overflow-auto`}>
-                <h2 className="text-2xl text-brown font-logo">{company}</h2>
-                <p className="text-sm text-brown">{text}</p>
+            <div className={`flex-col h-36 overflow-auto`}>
+                <h2 className="text-2xl text-brown font-logo">{company.name}</h2>
+                <p className="text-sm text-brown">{company.text}</p>
             </div>
         </div>);
     }

@@ -12,9 +12,9 @@ export default function LandingPage() {
       <div className="flex-col">
         <Row color="blue"/>
         <div className="grid grid-cols-12 gap-4 pt-4 px-4 justify-items-center min-h-80">
-          <div className="col-start-2 col-span-3 bg-green w-full rounded-lg text-center content-center"><p className="text-7xl text-clear_white">Image</p></div>
-          <div className="col-span-4 bg-grey w-full rounded-lg text-center content-center"><p className="text-7xl text-clear_white">Image</p></div>
-          <div className="col-end-12 col-span-3 bg-blue w-full rounded-lg text-center content-center"><p className="text-7xl text-clear_white">Image</p></div>
+          <div className="col-start-2 col-span-3 bg-green w-full rounded-lg text-center content-center"><p className="text-7xl text-clear-white">Image</p></div>
+          <div className="col-span-4 bg-grey w-full rounded-lg text-center content-center"><p className="text-7xl text-clear-white">Image</p></div>
+          <div className="col-end-12 col-span-3 bg-blue w-full rounded-lg text-center content-center"><p className="text-7xl text-clear-white">Image</p></div>
         </div>
         <Row color="green"  flipped={true}/>
         <div className="flex pt-4">
@@ -34,8 +34,8 @@ function Row({color, flipped}: {color?: string, flipped?: boolean}) : ReactEleme
     color ??= 'green';
     flipped ??= false;
   
-    const imageDivClass = `col-span-3 rounded-lg bg-${color} text-center content-center text-clear_white`;
-    const textDivClass = `col-span-7 p-4 bg-${color} min-h-80 rounded-lg text-clear_white`;
+    const imageDivClass = `col-span-3 rounded-lg bg-${color} text-center content-center text-clear-white`;
+    const textDivClass = `col-span-7 p-4 bg-${color} min-h-80 rounded-lg text-clear-white`;
   
     if(!flipped){
       return(<div className="grid grid-cols-12 gap-4 px-4 pt-4 pb-0">

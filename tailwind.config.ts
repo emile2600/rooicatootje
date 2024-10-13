@@ -12,19 +12,24 @@ const config: Config = {
         transparent: 'transparent',
         grey:  '#DFCAA0', // '#A9A9A9',
         white: '#dcded5', // alternate #dcded5
-        clear_white: '#ffffff',
+        'clear-white': '#ffffff',
         brown: '#3d240c',
         green: '#708090', // '#588157',
         blue: '#83c5be', // `#669BBC`,
       },
       backgroundImage: {
         'concrete-wall': "url('https://www.transparenttextures.com/patterns/concrete-wall-3.png');", /* This is mostly intended for prototyping; please download the pattern and re-host for production environments. Thank you! */
-        'tiles': "url('https://www.transparenttextures.com/patterns/batthern.png');", /* This is mostly intended for prototyping; please download the pattern and re-host for production environments. Thank you! */
-        'axiom': "url('https://www.transparenttextures.com/patterns/axiom-pattern.png');",
+        tiles: "url('https://www.transparenttextures.com/patterns/batthern.png');", /* This is mostly intended for prototyping; please download the pattern and re-host for production environments. Thank you! */
+        axiom: "url('https://www.transparenttextures.com/patterns/axiom-pattern.png');",
       },
       fontFamily: {
-        'logo': ['Engravers MT']
+        logo: ['Engravers MT']
       },
+      gridTemplateColumns: {
+        '3-1-1': "3fr 1fr 1fr",
+        '1-3-1': "1fr 3fr 1fr",
+        '1-1-3': "1fr 1fr 3fr"
+      }
     },
   },
   plugins: [],

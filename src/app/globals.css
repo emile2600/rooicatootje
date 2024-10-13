@@ -58,61 +58,132 @@ body {
   }
 }
 
-#sign-row {
-
-}
-
-#sign-row:has(.company-container:first-of-type:hover) {
-  animation: expand-left;
-  animation-duration: 0.5s;
-  animation-fill-mode: both;
-}
-
-@keyframes expand-left{
-  0%{
-    grid-template-columns: 1fr 1fr 1fr;
-  }
-  100%{
-    grid-template-columns: 1.5fr 0.5fr 0.5fr;
-  }
-}
-
-#sign-row:has(.company-container:hover) {
-  animation-name: expand-center;
-  animation-duration: 0.5s;
-  animation-fill-mode: both;
-}
-
-@keyframes expand-center{
-  0% {
-    grid-template-columns: 1fr 1fr 1fr;
-  }
-  80%{
-    grid-template-columns: 0.5fr 1.5fr 0.5fr;
-  }
-  100% {
-    grid-template-columns: 0.5fr 1.5fr 0.5fr;
-  }
-}
-
-#sign-row:has(.company-container:last-of-type:hover) {
-  animation: expand-right;
-  animation-duration: 0.5s;
-  animation-fill-mode: both;
-}
-
-@keyframes expand-right{
-  0%{
-    grid-template-columns: 1fr 1fr 1fr;
-  }
-  100%{
-    grid-template-columns: 0.5fr 0.5fr 1.5fr;
-  }
-}
-
-@layer base{
+@layer base {
   @font-face {
     font-family: 'Engravers MT';
     src: url('../assets/fonts/logo/engravers-mt.ttf') format('truetype');
   }
+}
+
+
+@keyframes grid-cols-3-1-1-frames {
+  from {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+  to {
+    grid-template-columns: 3fr 1fr 1fr;
+  }
+}
+
+.animate-grid-cols-3-1-1 {
+  animation-name: grid-cols-3-1-1-frames;
+  animation-duration: 300ms;
+  animation-fill-mode: forwards;
+}
+
+@keyframes grid-cols-3-1-1-frames-r {
+  from {
+    grid-template-columns: 3fr 1fr 1fr;
+  }
+  to {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+
+.animate-grid-cols-3-1-1-r {
+  animation-name: grid-cols-3-1-1-frames-r;
+  animation-duration: 300ms;
+  animation-fill-mode: forwards;
+}
+
+@keyframes grid-cols-1-3-1-frames {
+  from {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+  to {
+    grid-template-columns: 1fr 3fr 1fr;
+  }
+}
+
+.animate-grid-cols-1-3-1 {
+  animation-name: grid-cols-1-3-1-frames;
+  animation-duration: 300ms;
+  animation-fill-mode: forwards;
+}
+
+
+@keyframes grid-cols-1-3-1-frames-r {
+  from {
+    grid-template-columns: 1fr 3fr 1fr;
+  }
+  to {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+.animate-grid-cols-1-3-1-r {
+  animation-name: grid-cols-1-3-1-frames-r;
+  animation-duration: 300ms;
+  animation-fill-mode: forwards;
+
+}
+
+@keyframes grid-cols-1-1-3-frames {
+  from {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+  to {
+    grid-template-columns: 1fr 1fr 3fr;
+  }
+}
+
+.animate-grid-cols-1-1-3 {
+  animation-name: grid-cols-1-1-3-frames;
+  animation-duration: 300ms;
+  animation-fill-mode: forwards;
+}
+
+@keyframes grid-cols-1-1-3-frames-r {
+  from {
+    grid-template-columns: 1fr 1fr 3fr;
+  }
+  to {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+
+.animate-grid-cols-1-1-3-r {
+  animation-name: grid-cols-1-1-3-frames-r;
+  animation-duration: 300ms;
+  animation-fill-mode: forwards;
+}
+
+@keyframes grid-cols-1-2-frames {
+  from {
+    grid-template-columns: 1fr 0fr;
+  }
+  to {
+    grid-template-columns: 1fr 2fr;
+  }
+}
+
+.animate-grid-cols-1-2 {
+  animation-name: grid-cols-1-2-frames;
+  animation-duration: 700ms;
+  animation-delay: 200ms;
+  animation-fill-mode: forwards;
+}
+
+@keyframes grid-cols-1-0-frames {
+  from {
+    grid-template-columns: 1fr 2fr;
+  }
+  to {
+    grid-template-columns: 1fr 0fr;
+  }
+}
+
+.animate-grid-cols-1-0 {
+  animation-name: grid-cols-1-0-frames;
+  animation-duration: 300ms;
+  animation-fill-mode: forwards;
 }
