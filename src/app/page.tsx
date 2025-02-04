@@ -1,8 +1,11 @@
-import Sign from "./sign";
-
+import Layout from "./layout";
+import Sign from "./sign/page";
 
 export default function Home() {
-  return (<Sign/>);
+  
+  
+  return (<Layout>
+      <Sign/>
+  </Layout>
+  );
 }
-
-

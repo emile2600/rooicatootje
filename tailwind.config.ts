@@ -33,5 +33,10 @@ const config: Config = {
     },
   },
   plugins: [],
+  variants: {
+    extend: {
+      display: ['group-hover'],
+    }
+  },
 } satisfies Config;
 export default config;

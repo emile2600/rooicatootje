@@ -33,7 +33,7 @@ body {
   }
 }
 
-#brown-circle:hover {
+/* #brown-circle:hover {
   animation-name: brown-circle-animation;
   animation-duration: 200ms;
   animation-fill-mode: forwards;
@@ -56,104 +56,104 @@ body {
     transform: translate(12.5px,7.5px) scale(11.3,8.7) translate(-1.1px,-0.9px);
     rx: 0.25px;ry: 0.25px;
   }
-}
+} */
 
 @layer base {
   @font-face {
     font-family: 'Engravers MT';
-    src: url('../assets/fonts/logo/engravers-mt.ttf') format('truetype');
+    src: url('./assets/fonts/logo/engravers-mt.ttf') format('truetype');
   }
 }
 
 
-@keyframes grid-cols-3-1-1-frames {
+@keyframes grid-cols-4-1-1-frames {
   from {
     grid-template-columns: 1fr 1fr 1fr;
   }
   to {
-    grid-template-columns: 3fr 1fr 1fr;
+    grid-template-columns: 4fr 1fr 1fr;
   }
 }
 
-.animate-grid-cols-3-1-1 {
-  animation-name: grid-cols-3-1-1-frames;
-  animation-duration: 300ms;
+.animate-grid-cols-4-1-1 {
+  animation-name: grid-cols-4-1-1-frames;
+  animation-duration: 500ms;
   animation-fill-mode: forwards;
 }
 
-@keyframes grid-cols-3-1-1-frames-r {
+@keyframes grid-cols-4-1-1-frames-r {
   from {
-    grid-template-columns: 3fr 1fr 1fr;
+    grid-template-columns: 4fr 1fr 1fr;
   }
   to {
     grid-template-columns: 1fr 1fr 1fr;
   }
 }
 
-.animate-grid-cols-3-1-1-r {
-  animation-name: grid-cols-3-1-1-frames-r;
-  animation-duration: 300ms;
+.animate-grid-cols-4-1-1-r {
+  animation-name: grid-cols-4-1-1-frames-r;
+  animation-duration: 500ms;
   animation-fill-mode: forwards;
 }
 
-@keyframes grid-cols-1-3-1-frames {
+@keyframes grid-cols-1-4-1-frames {
   from {
     grid-template-columns: 1fr 1fr 1fr;
   }
   to {
-    grid-template-columns: 1fr 3fr 1fr;
+    grid-template-columns: 1fr 4fr 1fr;
   }
 }
 
-.animate-grid-cols-1-3-1 {
-  animation-name: grid-cols-1-3-1-frames;
-  animation-duration: 300ms;
+.animate-grid-cols-1-4-1 {
+  animation-name: grid-cols-1-4-1-frames;
+  animation-duration: 500ms;
   animation-fill-mode: forwards;
 }
 
 
-@keyframes grid-cols-1-3-1-frames-r {
+@keyframes grid-cols-1-4-1-frames-r {
   from {
-    grid-template-columns: 1fr 3fr 1fr;
+    grid-template-columns: 1fr 4fr 1fr;
   }
   to {
     grid-template-columns: 1fr 1fr 1fr;
   }
 }
-.animate-grid-cols-1-3-1-r {
-  animation-name: grid-cols-1-3-1-frames-r;
-  animation-duration: 300ms;
+.animate-grid-cols-1-4-1-r {
+  animation-name: grid-cols-1-4-1-frames-r;
+  animation-duration: 500ms;
   animation-fill-mode: forwards;
 
 }
 
-@keyframes grid-cols-1-1-3-frames {
+@keyframes grid-cols-1-1-4-frames {
   from {
     grid-template-columns: 1fr 1fr 1fr;
   }
   to {
-    grid-template-columns: 1fr 1fr 3fr;
+    grid-template-columns: 1fr 1fr 4fr;
   }
 }
 
-.animate-grid-cols-1-1-3 {
-  animation-name: grid-cols-1-1-3-frames;
-  animation-duration: 300ms;
+.animate-grid-cols-1-1-4 {
+  animation-name: grid-cols-1-1-4-frames;
+  animation-duration: 500ms;
   animation-fill-mode: forwards;
 }
 
-@keyframes grid-cols-1-1-3-frames-r {
+@keyframes grid-cols-1-1-4-frames-r {
   from {
-    grid-template-columns: 1fr 1fr 3fr;
+    grid-template-columns: 1fr 1fr 4fr;
   }
   to {
     grid-template-columns: 1fr 1fr 1fr;
   }
 }
 
-.animate-grid-cols-1-1-3-r {
-  animation-name: grid-cols-1-1-3-frames-r;
-  animation-duration: 300ms;
+.animate-grid-cols-1-1-4-r {
+  animation-name: grid-cols-1-1-4-frames-r;
+  animation-duration: 500ms;
   animation-fill-mode: forwards;
 }
 
@@ -184,6 +184,6 @@ body {
 
 .animate-grid-cols-1-0 {
   animation-name: grid-cols-1-0-frames;
-  animation-duration: 300ms;
+  animation-duration: 500ms;
   animation-fill-mode: forwards;
 }
