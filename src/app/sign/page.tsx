@@ -138,7 +138,9 @@ function CompanyContainer({company, onMouseEnter, onMouseLeave} : {company?: Com
             <div className={`flex-col h-48 overflow-hidden`}>
                 <h2 className="text-2xl text-brown font-logo">{company.name}</h2>
                 <p className="text-sm text-brown pe-1">{company.description}</p>
-                <Socials gridColumns={5} facebookLink={company.facebookLink} instagramLink={company.instagramLink} websiteLink={company.websiteLink}/>
+                <div className="py-4">
+                    <Socials gridColumns={5} facebookLink={company.facebookLink} instagramLink={company.instagramLink} websiteLink={company.websiteLink}/>
+                </div>
             </div>
         </div>);
     }

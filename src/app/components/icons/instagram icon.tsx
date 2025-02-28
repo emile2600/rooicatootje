@@ -7,8 +7,8 @@ import BrownCircle from "../../assets/svg/brownCircle";
 export default function InstagramIcon({instagramLink}:{instagramLink: string}) : ReactElement {
     return(<div className="cursor-pointer" onClick={() => onClick()}>
         <svg viewBox="0 0 20 20">
-            <BrownCircle x={"0%"} y={"0%"}/>
-            <FaInstagram size={5} x="38%" y="38%" fill="white" stroke="white"/>
+            <BrownCircle x={"0%"} y={"-25%"}/>
+            <FaInstagram size={5} x="38%" y="13%" fill="white" stroke="white"/>
         </svg>
     </div>);
 

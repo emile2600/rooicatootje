@@ -18,7 +18,8 @@ interface SocialsProps {
 export default function Socials(props: SocialsProps): ReactElement {
     const iconWrapper = "flex-col";
     const gridColumns = props.gridColumns === undefined ? 5 : props.gridColumns;
-    return(<div className={`grid grid-cols-${gridColumns}`}>
+    // Ask Sven or Julien why when the react page is loaded for the first time it renders this differently then when I manually change the number to 5 then to the variable (then it renders it correctly).
+    return(<div className={`grid grid-cols-${gridColumns}`}> 
         <Website/>
         <Facebook/>
         <Instagram/>
